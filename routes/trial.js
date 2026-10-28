@@ -35,12 +35,13 @@ trialRouter.post('/request-otp', async (req, res) => {
     await dataStore.saveOtp(normalizedEmail, otp, expiresAt);
     const mailResult = await sendOtpEmail(normalizedEmail, otp);
 
+    const isProduction = process.env.NODE_ENV === 'production';
     return res.json({
       success: true,
       message: `Verification code sent to ${normalizedEmail}`,
       expiresInMinutes: expiryMinutes,
-      isDev: mailResult.isDev,
-      debugOtp: mailResult.debugOtp, // provided in dev mode for easy testing
+      isDev: !isProduction && Boolean(mailResult.isDev),
+      debugOtp: !isProduction ? mailResult.debugOtp : undefined,
     });
   } catch (err) {
     console.error('[Trial Router] request-otp error:', err);

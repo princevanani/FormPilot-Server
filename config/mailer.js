@@ -4,6 +4,12 @@ let transporter = null;
 let isSmtpConfigured = false;
 
 export async function initMailer() {
+  const resendKey = process.env.RESEND_API_KEY;
+  if (resendKey) {
+    console.log('[Mailer] Resend API key configured (using HTTPS port 443).');
+    return;
+  }
+
   const host = process.env.SMTP_HOST;
   const user = process.env.SMTP_USER;
   const pass = process.env.SMTP_PASS;
@@ -15,6 +21,9 @@ export async function initMailer() {
         port: parseInt(process.env.SMTP_PORT || '587', 10),
         secure: process.env.SMTP_SECURE === 'true',
         auth: { user, pass: pass.replace(/\s+/g, '') },
+        connectionTimeout: 5000,
+        greetingTimeout: 5000,
+        socketTimeout: 5000,
       });
       await transporter.verify();
       isSmtpConfigured = true;
@@ -70,6 +79,32 @@ export async function sendOtpEmail(toEmail, otp) {
     </body>
     </html>
   `;
+
+  const resendApiKey = process.env.RESEND_API_KEY;
+  if (resendApiKey) {
+    try {
+      const res = await fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${resendApiKey}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          from: process.env.RESEND_FROM || 'FormPilot <onboarding@resend.dev>',
+          to: [toEmail],
+          subject,
+          html,
+        }),
+      });
+      const data = await res.json();
+      if (res.ok) {
+        return { success: true, messageId: data.id, isDev: false };
+      }
+      console.error('[Mailer] Resend API error:', data);
+    } catch (err) {
+      console.error('[Mailer] Resend request failed:', err.message);
+    }
+  }
 
   if (isSmtpConfigured && transporter) {
     try {

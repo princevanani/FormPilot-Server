@@ -5,9 +5,9 @@
       "isVerified": true,
       "plan": "free_trial",
       "status": "active",
-      "trialStartDate": "2026-10-28T14:23:24.618Z",
-      "trialEndDate": "2026-11-27T14:23:24.618Z",
-      "updatedAt": "2026-10-28T14:23:24.618Z"
+      "trialStartDate": "2026-10-28T18:54:47.123Z",
+      "trialEndDate": "2026-11-27T18:54:47.123Z",
+      "updatedAt": "2026-10-28T18:54:47.124Z"
     },
     "pilot-user@example.com": {
       "email": "pilot-user@example.com",
@@ -17,8 +17,8 @@
       "trialDurationDays": 30,
       "trialStartDate": "2026-10-27T15:07:04.993Z",
       "trialEndDate": "2026-11-26T15:07:04.993Z",
-      "lastLoginAt": "2026-10-28T14:23:24.940Z",
-      "updatedAt": "2026-10-28T14:23:24.940Z"
+      "lastLoginAt": "2026-10-28T18:54:03.021Z",
+      "updatedAt": "2026-10-28T18:54:03.022Z"
     },
     "vananiprince820@gmail.com": {
       "email": "vananiprince820@gmail.com",
@@ -30,6 +30,17 @@
       "trialEndDate": "2026-11-26T15:17:01.131Z",
       "lastLoginAt": "2026-10-27T15:17:01.131Z",
       "updatedAt": "2026-10-27T15:17:01.131Z"
+    },
+    "pilot-1793213687282@example.com": {
+      "email": "pilot-1793213687282@example.com",
+      "isVerified": true,
+      "plan": "free_trial",
+      "status": "active",
+      "trialDurationDays": 30,
+      "trialStartDate": "2026-10-28T18:54:47.315Z",
+      "trialEndDate": "2026-11-27T18:54:47.315Z",
+      "lastLoginAt": "2026-10-28T18:54:47.315Z",
+      "updatedAt": "2026-10-28T18:54:47.316Z"
     }
   },
   "otps": {

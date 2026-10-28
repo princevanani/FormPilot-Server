@@ -75,7 +75,7 @@ test('HTTP API: full free-trial OTP request, verification, and status lifecycle'
     assert.equal(badEmailRes.status, 400);
 
     // 3. Request OTP with valid email
-    const testEmail = 'pilot-user@example.com';
+    const testEmail = `pilot-${Date.now()}@example.com`;
     const otpReqRes = await fetch(`${baseUrl}/api/trial/request-otp`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
