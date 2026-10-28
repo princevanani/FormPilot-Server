@@ -1,0 +1,23 @@
+# Environment variables & secrets (CRITICAL - DO NOT COMMIT)
+.env
+.env.local
+.env.*.local
+
+# Firebase Service Account JSON keys (PRIVATE KEYS)
+*firebase-adminsdk*.json
+serviceAccountKey.json
+firebase-service-account.json
+*.pem
+
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local data store fallback
+data/store.json
+
+# Operating System files
+.DS_Store
+Thumbs.db
