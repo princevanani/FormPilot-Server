@@ -1,0 +1,43 @@
+{
+  "users": {
+    "user-trial@example.com": {
+      "email": "user-trial@example.com",
+      "isVerified": true,
+      "plan": "free_trial",
+      "status": "active",
+      "trialStartDate": "2026-10-28T14:23:24.618Z",
+      "trialEndDate": "2026-11-27T14:23:24.618Z",
+      "updatedAt": "2026-10-28T14:23:24.618Z"
+    },
+    "pilot-user@example.com": {
+      "email": "pilot-user@example.com",
+      "isVerified": true,
+      "plan": "free_trial",
+      "status": "active",
+      "trialDurationDays": 30,
+      "trialStartDate": "2026-10-27T15:07:04.993Z",
+      "trialEndDate": "2026-11-26T15:07:04.993Z",
+      "lastLoginAt": "2026-10-28T14:23:24.940Z",
+      "updatedAt": "2026-10-28T14:23:24.940Z"
+    },
+    "vananiprince820@gmail.com": {
+      "email": "vananiprince820@gmail.com",
+      "isVerified": true,
+      "plan": "free_trial",
+      "status": "active",
+      "trialDurationDays": 30,
+      "trialStartDate": "2026-10-27T15:17:01.131Z",
+      "trialEndDate": "2026-11-26T15:17:01.131Z",
+      "lastLoginAt": "2026-10-27T15:17:01.131Z",
+      "updatedAt": "2026-10-27T15:17:01.131Z"
+    }
+  },
+  "otps": {
+    "vananiprince820@gmail.com": {
+      "email": "vananiprince820@gmail.com",
+      "otp": "363886",
+      "expiresAt": 1793197960437,
+      "createdAt": "2026-10-28T14:22:40.437Z"
+    }
+  }
+}
